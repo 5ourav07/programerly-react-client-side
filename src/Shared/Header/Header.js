@@ -9,7 +9,7 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar className='header' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
                 <Link className="navbar-brand" to="/">
                     <img style={{ height: 40 }} src={Logo} alt="Logo" className="logo" />
@@ -20,6 +20,7 @@ const Header = () => {
 
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
+                        <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="#courses">Courses</Nav.Link>
                         <Nav.Link href="#faq">FAQ</Nav.Link>
                         <Nav.Link href="#blog">Blog</Nav.Link>

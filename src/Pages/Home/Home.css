@@ -1,0 +1,16 @@
+.top-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../Assets/banner.jpg');
+    min-height: 90.8vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title {
+    font-size: 80px;
+}
+
+.description {
+    font-size: 50px;
+}

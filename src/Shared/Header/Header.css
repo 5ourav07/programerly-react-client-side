@@ -1,3 +1,7 @@
+.header {
+    background: linear-gradient(rgba(0, 0, 0, 0.1));
+}
+
 /* Custom Dark Mode Toggle Element */
 .toggle-theme-wrapper {
     display: flex;
