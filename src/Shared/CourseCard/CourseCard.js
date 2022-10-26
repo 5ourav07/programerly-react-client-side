@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './CourseCard.css';
 
 const CourseCard = ({ category }) => {
-    const { image, name, duration } = category;
+    const { image, name, total_enrolled, duration } = category;
 
     return (
         <div>
@@ -14,6 +14,7 @@ const CourseCard = ({ category }) => {
                 <Card.Body>
                     <Card.Title className='mb-3'>Course Name: {name}</Card.Title>
                     <Card.Subtitle className="mb-3 text-white">Course Duration: {duration}</Card.Subtitle>
+                    <Card.Subtitle className="mb-3 text-white">Course Duration: {total_enrolled}</Card.Subtitle>
                     <Button className='bg-light w-100' type="button">
                         <Link className='card-link text-dark' to={`/courses/${category.id}`}>Details</Link>
                     </Button>
