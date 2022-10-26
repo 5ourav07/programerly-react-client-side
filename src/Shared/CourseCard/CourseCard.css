@@ -1,0 +1,16 @@
+.button {
+    background-color: white;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: gray;
+}
+
+.link {
+    color: black;
+}
+
+.link:hover {
+    color: blue;
+}
