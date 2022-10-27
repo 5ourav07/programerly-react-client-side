@@ -28,12 +28,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/categories/:id',
                 element: <CourseDetails></CourseDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+                loader: ({ params }) => fetch(`https://programerly-server-side.vercel.app/categories/${params.id}`)
             },
             {
                 path: '/courses/:id',
                 element: <PrivateRoute><Premium></Premium></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://programerly-server-side.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/faq',
