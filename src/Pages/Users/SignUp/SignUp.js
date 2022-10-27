@@ -89,7 +89,7 @@ const SignUp = () => {
 
     return (
         <div>
-            <Form onSubmit={handleSubmit}>
+            <Form className='px-5 mx-5 mt-5 w-50' onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control name="name" type="text" placeholder="Your Name" />
@@ -117,11 +117,13 @@ const SignUp = () => {
                         label={<>Accept <Link to="/terms">Terms and conditions</Link></>} />
                 </Form.Group>
 
+                <p>Already have an account? <Link to="/login">Please Login</Link></p>
+
                 <Button variant="primary" type="submit" disabled={!accepted}>Sign Up</Button><br /><br />
 
                 <Form.Text className="text-danger">{error}</Form.Text>
             </Form>
-            <ListGroup>
+            <ListGroup className='px-5 mx-5 w-50'>
                 <Button onClick={handleGoogleSignIn} className='mb-2' variant="outline-danger">
                     <FaGoogle></FaGoogle> Login with Google
                 </Button>

@@ -23,7 +23,7 @@ const Courses = () => {
                             {
                                 categories.map(category =>
                                     <Button className='my-2 bg-secondary' type="button" key={category.id}>
-                                        <Link className='course-link text-white' to={`/courses/${category.id}`}>{category.name}</Link>
+                                        <Link className='course-link text-white' to={`/categories/${category.id}`}>{category.name}</Link>
                                     </Button>
                                 )
                             }

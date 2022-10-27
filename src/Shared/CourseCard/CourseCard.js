@@ -16,7 +16,7 @@ const CourseCard = ({ category }) => {
                     <Card.Subtitle className="mb-3 text-white">Course Duration: {duration}</Card.Subtitle>
                     <Card.Subtitle className="mb-3 text-white">Course Duration: {total_enrolled}</Card.Subtitle>
                     <Button className='bg-light w-100' type="button">
-                        <Link className='card-link text-dark' to={`/courses/${category.id}`}>Details</Link>
+                        <Link className='card-link text-dark' to={`/categories/${category.id}`}>Details</Link>
                     </Button>
                 </Card.Body>
             </Card>

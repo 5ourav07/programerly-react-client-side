@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const Login = () => {
@@ -43,7 +43,7 @@ const Login = () => {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form className='px-5 mx-5 my-5 w-50' onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control name="email" type="email" placeholder="Enter email" required />
@@ -54,6 +54,8 @@ const Login = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control name="password" type="password" placeholder="Password" required />
             </Form.Group>
+
+            <p>Don't have an account? <Link to="/signup">Create an account</Link></p>
 
             <Button variant="primary" type="submit">Login</Button><br /><br />
 
