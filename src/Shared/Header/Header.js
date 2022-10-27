@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import Logo from '../../Assets/logo.png';
+import { AuthContext } from '../../Contexts/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 import './Header.css';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
     return (
         <Navbar className='header' collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
@@ -34,14 +44,32 @@ const Header = () => {
                         </div>
                     </Nav>
 
-                    <Nav>
-                        <NavDropdown title="Profile" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
-                        </NavDropdown>
+                    <Nav className='d-flex align-items-center'>
+                        <>
+                            {
+                                user?.uid
+                                    ?
+                                    <>
+                                        <span className='display-name'>{user?.displayName}</span>
+                                        <Link to='/' className='link p-0 mx-3' onClick={handleLogOut}>Log Out</Link>
+                                    </>
+                                    :
+                                    <>
+                                        <Link className='link me-3' to="/login">Login</Link>
+                                        <Link className='link' to="/signup">Sign Up</Link>
+                                    </>
+                            }
+                        </>
+
+                        <>
+                            {
+                                user?.photoURL
+                                    ?
+                                    <Image style={{ height: '30px' }} src={user?.photoURL} roundedCircle></Image>
+                                    :
+                                    <FaUser></FaUser>
+                            }
+                        </>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

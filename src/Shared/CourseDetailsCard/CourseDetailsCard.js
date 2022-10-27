@@ -2,6 +2,9 @@ import React from 'react';
 import { Button, Container, Image } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+// import Pdf from "react-to-pdf";
+
+// const ref = React.createRef();
 
 const CourseDetailsCard = ({ course }) => {
     const { title, author, image, details } = course;
@@ -30,7 +33,14 @@ const CourseDetailsCard = ({ course }) => {
                     <Card.Img style={{ width: '100px', height: '100px' }} variant="top" src={image} />
                     <Card.Text>{details}</Card.Text>
                     <Button className='bg-light w-100' type="button">
-                        <Link className='card-link text-dark'>Get Premium Access</Link>
+                        <Link to='/checkout' className='card-link text-dark'>Get Premium Access</Link>
+                        {/* <Pdf targetRef={ref} filename="course-details.pdf">
+                            {({ toPdf }) => <button onClick={toPdf}>Download Details</button>}
+                        </Pdf>
+                        <div ref={ref}>
+                            <h1>{title}</h1>
+                            <h2>{details}</h2>
+                        </div> */}
                     </Button>
                 </Card.Body>
             </Card>
