@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import Logo from '../../Assets/logo.png';
 import { AuthContext } from '../../Contexts/AuthProvider';
 import { FaUser } from 'react-icons/fa';
-import './Header.css';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -19,7 +18,7 @@ const Header = () => {
     }
 
     return (
-        <Navbar className='header' collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
                 <Link className="navbar-brand" to="/">
                     <img style={{ height: 40 }} src={Logo} alt="Logo" className="logo" />
@@ -34,14 +33,6 @@ const Header = () => {
                         <Nav.Link href="/courses">Courses</Nav.Link>
                         <Nav.Link href="/faq">FAQ</Nav.Link>
                         <Nav.Link href="/blog">Blog</Nav.Link>
-                        <div className="toggle-theme-wrapper">
-                            <span>☀️</span>
-                            <label className="toggle-theme" htmlFor="checkbox">
-                                <input type="checkbox" id="checkbox" />
-                                <div className="slider round"></div>
-                            </label>
-                            <span>🌒</span>
-                        </div>
                     </Nav>
 
                     <Nav className='d-flex align-items-center'>
